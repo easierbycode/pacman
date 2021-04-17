@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>PAC-MAN 30th Anniversary</title>
+<link rel="shortcut icon" href="logos/favicon.ico" type="image/x-icon">
+<style>
+	body, td, a, p, .h	{ font-family:arial,sans-serif; }
+	tr					{ height:16px; }
+	a 					{ color:#E1E1E1; cursor:pointer; outline:none; text-decoration:none; }
+	a:hover			{ color:#FFFFFF; }
+	.sblc a			{ cursor:pointer; display:block; font-size:11px; margin-left:23px; width:75px; }
+</style>
+<!--
+<script src="http://www.google.com/jsapi?key=ABQIAAAAupx-sm4_03I2pOwXp_Ht_hTqAk8mdTSE5xx4dNOsFnpMbLQNAxRxoGpqfP_eAPyeqUt-Z9HsyY3xUw" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+google.load("jquery", "1.4.2");
+
+//]]>
+</script>
+-->
+<script src="logos/js/jquery.min.js" type="text/javascript"></script>
+</head>
+<body bgcolor="#000000">
+<!--<script type="text/javascript">-->
+  <!--var _gaq = _gaq || [];-->
+  <!--_gaq.push(['_setAccount', 'UA-12912017-5']);-->
+  <!--_gaq.push(['_trackPageview']);-->
+
+   <!--(function() {-->
+     <!--var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;-->
+     <!--ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';-->
+     <!--var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);-->
+   <!--})();-->
+<!--</script>-->
+<center>
+<br clear=all>
+<div>
+	<div id="logo" style="width:554px;height:186px;background:black url(logos/pacman10-hp.png) 0 0 no-repeat;position:relative;margin-bottom:9px">
+		<div id="logo-l" style="width:200px;height:2px;left:177px;top:157px;background:#990;position:absolute;display:none;overflow:hidden">
+			<div id="logo-b" style="position:absolute;left:0;background:#ff0;height:8px;width:0"></div>
+		</div>
+	</div>
+	
+	<script>
+		google = {		
+			browser: { 
+				engine: { 
+					IE: (jQuery.browser.msie==true)
+				} 
+			},
+			dom: { 
+				append: function(ele) { jQuery('body').append(ele) }, 
+				remove: function(ele) { jQuery(ele).remove() } 
+			},
+			pacManSound: true
+		};
+	</script>
+	<script type="text/javascript" src="logos/js/gamepad-support.js"></script>
+	<script type="text/javascript" src="logos/js/pacman10-hp.3.js"></script>
+</div>
+<table cellspacing="0" cellpadding="0"><tbody><tr valign="top"><td class="sblc"><div style="position:relative;"><a class="player_count" id="players_2" title="WASD keys control Player 2" style="display:none;">Two Player</a><a class="player_count" id="players_1" title="Drop Player 2" style="display:none;margin-top:0;position:absolute;top:0;">One Player</a><a id="insert_coin" title="Insert Coin" style="margin-top:0;position:absolute;top:0;">Insert Coin</a></div></td></tr><tr><td class="sblc"><a id="level_254" title="The level before the last">Level 254</a></td></tr><tr><td class="sblc"><a id="lives_30" title="30 lives">30 Lives</a></td></tr></tbody></table>
+</center>
+<script type="text/javascript">
+	jQuery(function($) {
+		$("#players_2").click(function(){google.pacman.setTwoPlayer()});
+		$("#players_1").click(function(){google.pacman.setOnePlayer()});		
+		$(".player_count").click(function(){$(".player_count").toggle()});
+		$("#insert_coin").click(function(){google.pacman.insertCoin()});
+		$("#level_254").click(function(){google.pacman.cheatLevel(254); google.pacman.finishLevel()});
+		$("#lives_30").click(function(){google.pacman.cheatLives(30); google.pacman.updateChromeLives()});
+	});
+</script>
+</body>
+</html>
