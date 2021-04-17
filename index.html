@@ -3,11 +3,14 @@
 <title>PAC-MAN 30th Anniversary</title>
 <link rel="shortcut icon" href="logos/favicon.ico" type="image/x-icon">
 <style>
+	body				{ margin:0; overflow:hidden; }
 	body, td, a, p, .h	{ font-family:arial,sans-serif; }
 	tr					{ height:16px; }
 	a 					{ color:#E1E1E1; cursor:pointer; outline:none; text-decoration:none; }
-	a:hover			{ color:#FFFFFF; }
-	.sblc a			{ cursor:pointer; display:block; font-size:11px; margin-left:23px; width:75px; }
+	a:hover				{ color:#FFFFFF; }
+	.sblc a				{ cursor:pointer; display:block; font-size:11px; margin-left:23px; width:75px; }
+	#pcm-c				{ image-rendering:pixelated; }
+	#logo-wrpr			{ display:flex; height:100%; flex-direction:column; justify-content:center; }
 </style>
 <!--
 <script src="http://www.google.com/jsapi?key=ABQIAAAAupx-sm4_03I2pOwXp_Ht_hTqAk8mdTSE5xx4dNOsFnpMbLQNAxRxoGpqfP_eAPyeqUt-Z9HsyY3xUw" type="text/javascript"></script>
@@ -35,8 +38,8 @@ google.load("jquery", "1.4.2");
 <!--</script>-->
 <center>
 <br clear=all>
-<div>
-	<div id="logo" style="width:554px;height:186px;background:black url(logos/pacman10-hp.png) 0 0 no-repeat;position:relative;margin-bottom:9px">
+<div id="logo-wrpr">
+	<div id="logo" style="width:554px;height:186px;background:black url(logos/pacman10-hp.png) 0 0 no-repeat;position:relative;margin:0 auto">
 		<div id="logo-l" style="width:200px;height:2px;left:177px;top:157px;background:#990;position:absolute;display:none;overflow:hidden">
 			<div id="logo-b" style="position:absolute;left:0;background:#ff0;height:8px;width:0"></div>
 		</div>
@@ -62,6 +65,8 @@ google.load("jquery", "1.4.2");
 <table cellspacing="0" cellpadding="0"><tbody><tr valign="top"><td class="sblc"><div style="position:relative;"><a class="player_count" id="players_2" title="WASD keys control Player 2" style="display:none;">Two Player</a><a class="player_count" id="players_1" title="Drop Player 2" style="display:none;margin-top:0;position:absolute;top:0;">One Player</a><a id="insert_coin" title="Insert Coin" style="margin-top:0;position:absolute;top:0;">Insert Coin</a></div></td></tr><tr><td class="sblc"><a id="level_254" title="The level before the last">Level 254</a></td></tr><tr><td class="sblc"><a id="lives_30" title="30 lives">30 Lives</a></td></tr></tbody></table>
 </center>
 <script type="text/javascript">
+	function resize() { $("#pcm-c").css("transform", `scale(${window.innerWidth / $("#pcm-c").width()})`) };
+
 	jQuery(function($) {
 		$("#players_2").click(function(){google.pacman.setTwoPlayer()});
 		$("#players_1").click(function(){google.pacman.setOnePlayer()});		
@@ -69,7 +74,10 @@ google.load("jquery", "1.4.2");
 		$("#insert_coin").click(function(){google.pacman.insertCoin()});
 		$("#level_254").click(function(){google.pacman.cheatLevel(254); google.pacman.finishLevel()});
 		$("#lives_30").click(function(){google.pacman.cheatLives(30); google.pacman.updateChromeLives()});
+		resize();
 	});
+
+	window.addEventListener('resize', resize);
 </script>
 </body>
 </html>
