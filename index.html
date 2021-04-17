@@ -74,10 +74,10 @@ google.load("jquery", "1.4.2");
 		$("#insert_coin").click(function(){google.pacman.insertCoin()});
 		$("#level_254").click(function(){google.pacman.cheatLevel(254); google.pacman.finishLevel()});
 		$("#lives_30").click(function(){google.pacman.cheatLives(30); google.pacman.updateChromeLives()});
-		resize();
 	});
 
 	window.addEventListener('resize', resize);
+	window.addEventListener('load', resize);
 </script>
 </body>
 </html>
