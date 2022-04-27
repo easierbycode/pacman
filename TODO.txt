@@ -1,6 +1,7 @@
 NOW
 ====
-- hmmm?
+- add white pony frame to pac-man-right animation
+  - 15x18
 
 
 
