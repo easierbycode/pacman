@@ -1,7 +1,6 @@
 NOW
 ====
-- add white pony frame to pac-man-right animation
-  - 15x18
+
 
 
 
@@ -15,3 +14,10 @@ LATER
 INFO
 ====
 - https://codemonkey.games/pacman/TODO.txt
+
+
+
+DONE
+=====
+- add white pony frame to pac-man-right animation
+  - 15x18
