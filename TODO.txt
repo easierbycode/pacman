@@ -8,3 +8,10 @@ NOW
 LATER
 =====
 - more hmmm
+
+
+
+
+INFO
+====
+- https://codemonkey.games/pacman/TODO.txt
