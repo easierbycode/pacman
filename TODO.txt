@@ -1,6 +1,9 @@
 NOW
 ====
-- TEST UPDATE
+- why doesn't https://codemonkey.games/pacman/logos/_pacman10-hp-sprite-v3.png work?
+
+-  UPDATE png
+   - pacman10-hp.png -> v3
 
 
 
